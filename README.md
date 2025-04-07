@@ -1,54 +1,76 @@
-# CodeIgniter 4 Framework
+# Sistema de Login e Registro - CodeIgniter 4
 
-## What is CodeIgniter?
+Este projeto é uma aplicação web simples contendo páginas de **login** e **registro de usuários**, desenvolvida em **PHP** utilizando o framework **CodeIgniter 4**. 
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+Foi criado com fins acadêmicos e funciona localmente em ambiente de desenvolvimento como o **XAMPP**.
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## Funcionalidades
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+- Cadastro de novos usuários com validação de dados.
+- Autenticação segura com verificação de senha.
+- Redirecionamento após login.
+- Estrutura organizada seguindo o padrão MVC do CodeIgniter.
 
-The user guide corresponding to the latest version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/).
+## Requisitos
 
-## Important Change with index.php
+- PHP 7.4 ou superior
+- MySQL
+- Composer
+- XAMPP ou similar (Apache + MySQL)
+- CodeIgniter 4 (já incluído no projeto)
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+## Instalação e Execução
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/luiznascimentodev/web.local.git
+   ```
 
-**Please** read the user guide for a better explanation of how CI4 works!
+2. Mova o projeto para a pasta `htdocs` do XAMPP:
+   ```bash
+   mv web.local /caminho/para/xampp/htdocs/web.local
+   ```
 
-## Repository Management
+3. Inicie o Apache e o MySQL pelo painel do XAMPP.
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+4. Crie um banco de dados no phpMyAdmin com o nome `login_ci` (ou o nome definido em `.env`).
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+5. Importe o arquivo `login_ci.sql` (caso exista no projeto) para criar as tabelas necessárias.
 
-## Contributing
+6. Configure o arquivo `.env` com suas credenciais do banco de dados:
+   ```
+   database.default.hostname = localhost
+   database.default.database = login_ci
+   database.default.username = root
+   database.default.password =
+   database.default.DBDriver = MySQLi
+   ```
 
-We welcome contributions from the community.
+7. Acesse o projeto no navegador:
+   ```
+   http://localhost/web.local/public
+   ```
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+## Tecnologias Utilizadas
 
-## Server Requirements
+- **PHP 7.4+**
+- **CodeIgniter 4**
+- **MySQL**
+- **HTML5 + CSS3**
+- **Bootstrap (opcional)**
 
-PHP version 7.4 or higher is required, with the following extensions installed:
+## Estrutura de Diretórios (principais)
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+- `app/Controllers`: Controladores da aplicação
+- `app/Models`: Modelos de acesso ao banco de dados
+- `app/Views`: Arquivos de visualização (HTML + PHP)
+- `public/`: Pasta pública acessível via navegador
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+## Observações
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+Este projeto **não está hospedado no GitHub Pages**, pois depende de um servidor backend (PHP). Utilize XAMPP ou ambiente semelhante para rodá-lo corretamente.
+
+## Contato
+
+- **Autor**: Luiz Nascimento  
+- **LinkedIn**: [linkedin.com/in/luiz-felippe-nascimento](https://www.linkedin.com/in/luiz-felippe-nascimento/)
